@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast | Discover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="./styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+</head>
+<body class="body">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar__logo">
+                <h2><span class="sidebar__circle">P</span> <span class="sidebar__title">PODCAST</span></h2>
+            </div>
+            <nav class="sidebar__nav">
+                <ul class="sidebar__list">
+                    <li class="sidebar__element"><a class="sidebar__link sidebar__link--active" href="#"><i class="fa-solid fa-earth-americas"></i> <span>Discover</span></a></li>
+                    <li class="sidebar__element"><a class="sidebar__link" href="#"><i class="fa-solid fa-headphones"></i> <span>Speaker</span></a></li>
+                    <li class="sidebar__element"><a class="sidebar__link" href="#"><i class="fa-solid fa-record-vinyl"></i> <span>Albums</span></a></li>
+                    <li class="sidebar__element"><a class="sidebar__link" href="#"><i class="fa-solid fa-safari"></i> <span>Browse</span></a></li>
+                    <li class="sidebar__element"><a class="sidebar__link" href="#"><i class="fa-solid fa-gear"></i> <span>Themes</span></a></li>
+                </ul>
+                <ul class="sidebar__profile">
+                    <li class="sidebar__element"><a class="sidebar__link" href="#"><i class="fa-solid fa-earth-americas"></i> <span>Playlis</span></a></li>
+                    <li class="sidebar__element"><a class="sidebar__link" href="#"><i class="fa-solid fa-headphones"></i> <span>Account</span></a></li>
+                    <li class="sidebar__element"><a class="sidebar__link" href="#"><i class="fa-solid fa-record-vinyl"></i> <span>Preferences</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="main">
+            <div class="header">
+                <h1 class="header__title">DISCOVER</h1>
+                <div class="header__profile">
+                    <span class="header_image"></span>
+                    <div class="header__info">
+                        <p class="header__name">Samantha</p>
+                        <p class="header__country">Indonesa</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="categories">
+                <ul class="categories__list">
+                    <li data-name="popular" class="categories__element categories__element--active" id="popular">Popular</li>
+                    <li data-name="finance" class="categories__element" id="finance">Finance</li>
+                    <li data-name="business" class="categories__element">Business</li>
+                    <li class="categories__element">Creativity</li>
+                    <li class="categories__element">Design</li>
+                    <li class="categories__element">Team</li>
+                </ul>
+            </nav>
+            <div class="podcast">
+                <div class="podcast__card podcast__card--popular">
+                    <div class="podcast__title">CREATIVE CONFIDENCE</div>
+                    <div class="podcast__author">
+                        <p class="podcast__name">Natasha Rose</p>
+                        <p class="podcast__role">Senior Designer</p>
+                    </div>
+                    <div class="podcast__footer">
+                        <div class="podcast__play"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="podcast__profile_image"></div>
+                    </div>
+                </div>
+
+                <div class="podcast__card podcast__card--blue podcast__card--finance">
+                    <div class="podcast__title">FINANCIAL FREEDOM</div>
+                    <div class="podcast__author">
+                        <p class="podcast__name">Ellisa Rose</p>
+                        <p class="podcast__role">Senior Designer</p>
+                    </div>
+                    <div class="podcast__footer">
+                        <div class="podcast__play"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="podcast__profile_image"></div>
+                    </div>
+                </div>
+
+                <div class="podcast__card podcast__card--purple podcast__card--business">
+                    <div class="podcast__title">BUSINESS STRATEGY</div>
+                    <div class="podcast__author">
+                        <p class="podcast__name">Samatha Rose</p>
+                        <p class="podcast__role">Senior Designer</p>
+                    </div>
+                    <div class="podcast__footer">
+                        <div class="podcast__play"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="podcast__profile_image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="player">
+            <div class="player__picture"></div>
+            <div class="player__info">
+                <p class="player__title">Ideation</p>
+                <p class="player__artist">John Smith</p>
+            </div>
+            <div class="player__start"><i class="fa-solid fa-circle-play"></i></div>
+            <div class="player__time"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $( document ).ready(function() {
+
+            $(".categories__element").click(function() {
+                const name = $(this).attr("data-name");
+                $(".categories__element").removeClass("categories__element--active");
+                $(this).addClass("categories__element--active");
+
+                $(".podcast__card").hide();
+                $(`.podcast__card--${name}`).show();
+
+            });
+        });
+    </script>
+</body>
+</html>
